@@ -216,6 +216,7 @@ class QrTag {
         // Yii::import('ext.qr.shapes.*');
 		foreach (glob("shapes/*.php") as $filename) {
     		include $filename;
+			echo "-".$filename;
 		}
     }
 
@@ -414,7 +415,8 @@ if (!class_exists('QrTagFrameTwoSquare', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.squarethings') . '.ttf';
+            //$font = Yii::getPathOfAlias('system.squarethings') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "squarethings.ttf";
             $letter = 'G';
             $rect = $this->calculateTextBox($letter, $font, $this->size / 1.3, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -458,7 +460,8 @@ if (!class_exists('QrTagFrameGrid', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.squarethings') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.squarethings') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "squarethings.ttf";
             $letter = 'g';
             $rect = $this->calculateTextBox($letter, $font, $this->size / 1.3, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -501,7 +504,8 @@ if (!class_exists('QrTagFrameDot9', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "markerdot1.ttf";
             $letter = 'i';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.4) * 3, 0);
             //        $rect['width'] += 1;
@@ -529,7 +533,8 @@ if (!class_exists('QrTagFrameDot7', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "markerdot1.ttf";
             $letter = 'g';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.4) * 3, 0);
             //        $rect['width'] += 1;
@@ -557,7 +562,8 @@ if (!class_exists('QrTagFrameDot3', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "markerdot1.ttf";
             $letter = 'c';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.4) * 3, 0);
             //        $rect['width'] += 1;
@@ -586,7 +592,8 @@ if (!class_exists('QrTagFrameDot18', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "markerdot1.ttf";
             $letter = 'u';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.4) * 3, 0);
             //        $rect['width'] += 1;
@@ -615,7 +622,8 @@ if (!class_exists('QrTagFrameDot16', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "markerdot1.ttf";
             $letter = 'q';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.4) * 3, 0);
             //        $rect['width'] += 1;
@@ -644,7 +652,8 @@ if (!class_exists('QrTagFrameDot15', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "markerdot1.ttf";
             $letter = 'o';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.4) * 3, 0);
             //        $rect['width'] += 1;
@@ -672,7 +681,8 @@ if (!class_exists('QrTagFrameDot14', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "markerdot1.ttf";
             $letter = 'p';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.4) * 3, 0);
             //        $rect['width'] += 1;
@@ -700,7 +710,8 @@ if (!class_exists('QrTagFrameDot12', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "markerdot1.ttf";
             $letter = 'm';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.4) * 3, 0);
             //        $rect['width'] += 1;
@@ -728,7 +739,9 @@ if (!class_exists('QrTagFrameDot11', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.markerdot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "markerdot1.ttf";
+			
             $letter = 'l';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.4) * 3, 0);
             //        $rect['width'] += 1;
@@ -756,7 +769,9 @@ if (!class_exists('QrTagFrameAngle', FALSE)) {
         public function generate() {
             $color = $this->hex2dec($this->color);
 
-            $font = Yii::getPathOfAlias('system.squarethings') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.squarethings') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "squarethings.ttf";
+			
             $letter = 'f';
             $rect = $this->calculateTextBox($letter, $font, $this->size / 1.35, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -781,7 +796,8 @@ if (!class_exists('QrTagFrame9', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "frames1.ttf";
             $letter = 'k';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.3) * 7, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -806,7 +822,8 @@ if (!class_exists('QrTagFrame7', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "frames1.ttf";
             $letter = 'i';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.3) * 7, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -831,7 +848,8 @@ if (!class_exists('QrTagFrame6', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "frames1.ttf";
             $letter = 'g';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.3) * 7, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -856,7 +874,8 @@ if (!class_exists('QrTagFrame5', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "frames1.ttf";
             $letter = 'f';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.3) * 7, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -882,7 +901,8 @@ if (!class_exists('QrTagFrame3', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "frames1.ttf";
             $letter = 'd';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.3) * 7, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -907,7 +927,8 @@ if (!class_exists('QrTagFrame2', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "frames1.ttf";
             $letter = 'c';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.3) * 7, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -932,7 +953,8 @@ if (!class_exists('QrTagFrame16', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "frames1.ttf";
             $letter = 'r';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.3) * 7, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -957,7 +979,8 @@ if (!class_exists('QrTagFrame13', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "frames1.ttf";
             $letter = 'o';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.3) * 7, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -982,7 +1005,8 @@ if (!class_exists('QrTagFrame12', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.frames1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "frames1.ttf";
             $letter = 'n';
             $rect = $this->calculateTextBox($letter, $font, ($this->size / 1.3) * 7, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1026,7 +1050,8 @@ if (!class_exists('QrTagDotButterfly', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.HAROP') . '.TTF';
+            // $font = Yii::getPathOfAlias('system.HAROP') . '.TTF';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "HAROP.ttf";
             $letter = 'B';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $rect['width'] += 1;
@@ -1053,7 +1078,8 @@ if (!class_exists('QrTagDot9', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
             $letter = 'i';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1079,7 +1105,8 @@ if (!class_exists('QrTagDot8', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
             $letter = 'h';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1105,7 +1132,8 @@ if (!class_exists('QrTagDot7', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
             $letter = 'g';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1131,7 +1159,8 @@ if (!class_exists('QrTagDot6', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
             $letter = 'f';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1157,7 +1186,8 @@ if (!class_exists('QrTagDot5', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
             $letter = 'e';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1183,7 +1213,8 @@ if (!class_exists('QrTagDot4', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
             $letter = 'd';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1209,7 +1240,8 @@ if (!class_exists('QrTagDot3', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
             $letter = 'c';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1400,7 +1432,8 @@ if (!class_exists('QrTagDot2', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
             $letter = 'b';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1490,7 +1523,8 @@ if (!class_exists('QrTagDot14', FALSE)) {
 
             // right
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.edges') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.edges') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "edges.ttf";
             $letter = 'g';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $this->imRight = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1502,7 +1536,8 @@ if (!class_exists('QrTagDot14', FALSE)) {
 
             // left
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.edges') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.edges') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "edges.ttf";
             $letter = 'h';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $this->imLeft = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1517,7 +1552,8 @@ if (!class_exists('QrTagDot14', FALSE)) {
 
             // up
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.edges') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.edges') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "edges.ttf";
             $letter = 'i';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $this->imUp = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1529,7 +1565,8 @@ if (!class_exists('QrTagDot14', FALSE)) {
 
             // down
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.edges') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.edges') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "edges.ttf";
             $letter = 'j';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $this->imDown = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1620,7 +1657,8 @@ if (!class_exists('QrTagDot11', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
             $letter = 'k';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1646,7 +1684,9 @@ if (!class_exists('QrTagDot10', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            // $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			echo $font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
+			
             $letter = 'j';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);
@@ -1672,7 +1712,8 @@ if (!class_exists('QrTagDot1', FALSE)) {
 
         public function generate() {
             $color = $this->hex2dec($this->color);
-            $font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+            //$font = Yii::getPathOfAlias('system.bodydot1') . '.ttf';
+			$font = getcwd() . DIRECTORY_SEPARATOR . "fonts" . DIRECTORY_SEPARATOR. "bodydot1.ttf";
             $letter = 'a';
             $rect = $this->calculateTextBox($letter, $font, $this->size, 0);
             $im = imagecreatetruecolor($rect['width'], $rect['width']);

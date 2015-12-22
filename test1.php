@@ -4,17 +4,30 @@ error_reporting(-1);
 
 echo "Start";
 include("qrext/QrTag.php");
+include("qrext/shapes/QrTagFrameCircle.php");
 
-$dot = 'QrTagDotSquare';
-$frame_dot = 'QrTagFrameDotSquare';
-$frame = 'QrTagFrameSquare';
-$dotColor = '000000';
-$frame_dotColor = '000000';
-$frameColor = '000000';
-$backgroundColor = 'ffffff';
+$issimple = false;
+
+if($issimple) {
+	$dot = 'QrTagDotSquare';
+	$frame_dot = 'QrTagFrameDotSquare';
+	$frame = 'QrTagFrameSquare';
+	$dotColor = '000000';
+	$frame_dotColor = '000000';
+	$frameColor = '000000';
+} else {
+	$dot = 'QrTagDot11';
+	$frame_dot = 'QrTagFrameDot3';
+	$frame = 'QrTagFrameCircle';
+	$dotColor = '#3db54b';
+	$frame_dotColor = '#3db54b';
+	$frameColor = '#1176bc';
+}
+
+$backgroundColor = 'FFFFFF';
 $show_in_gallery = 0;
 $sizestr = "large";
-$file = Yii::getPathOfAlias('webroot.tmp') . DIRECTORY_SEPARATOR . $fileName . '.png';
+$file = getcwd() . DIRECTORY_SEPARATOR . "myqr" . '.png';
 
 switch ($sizestr) {
 	case 'medium':
@@ -32,7 +45,7 @@ switch ($sizestr) {
 }
 
 $qr = new QrTag();
-$qr->bgColor = "#FFFFFF";
+$qr->bgColor = $backgroundColor;
 
 if (class_exists($frame_dot)) {
 	$dotShape = new $dot;
@@ -43,7 +56,7 @@ if (class_exists($frame_dot)) {
 $dotShape->color = $dotColor;
 
 $dotShape->size = $size;
-$qr->text = $tag_url;
+$qr->text = "Hi....";
 
 $qr->setDot($dotShape);
 
