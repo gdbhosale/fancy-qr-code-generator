@@ -9,4 +9,5 @@ Run test1.php make "qrext/phpqrcode/cache/" and "." directory writable.
 ![Generated QR Code](https://github.com/gdbhosale/fancy-qr-code-generator/blob/master/myqr.png)
 
 **FINAL QR IMAGE WITH EMBEDDED LOGO:**
+
 ![Generated QR Code](https://github.com/gdbhosale/fancy-qr-code-generator/blob/master/myqr_final.png)
