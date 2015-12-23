@@ -26,7 +26,7 @@ if($issimple) {
 
 $backgroundColor = 'FFFFFF';
 $show_in_gallery = 0;
-$sizestr = "large";
+$sizestr = "";
 $file = getcwd() . DIRECTORY_SEPARATOR . "myqr" . '.png';
 
 switch ($sizestr) {
