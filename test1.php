@@ -2,9 +2,14 @@
 
 error_reporting(-1);
 
-echo "Start";
+echo "Start QR Generation...\n\n<br><br>";
+
+// ======================= Include required files =======================
 include("qrext/QrTag.php");
 include("qrext/shapes/QrTagFrameCircle.php");
+
+
+// ======================= Configuration =======================
 
 $issimple = false;
 
@@ -44,6 +49,8 @@ switch ($sizestr) {
 		break;
 }
 
+// ======================= Initialization =======================
+
 $qr = new QrTag();
 $qr->bgColor = $backgroundColor;
 
@@ -76,7 +83,62 @@ if (class_exists($frame_dot)) {
 
 $qr->frame->color = $frameColor;
 $qr->file = $file;
+// ======================= Start Generation =======================
 $qr->generate();
 
-echo "End";
+echo "End QR Generation...\n\n<br><br>";
+echo "Start QR Logo embedding...\n\n<br><br>";
+
+// ======================= Logo embedding ======================= 
+
+$logo_path = getcwd() . DIRECTORY_SEPARATOR . "logo2.jpg";
+$qr_path = getcwd() . DIRECTORY_SEPARATOR . "myqr.png";
+$qr_final = getcwd() . DIRECTORY_SEPARATOR . "myqr_final.png";
+
+$ext = pathinfo($logo_path, PATHINFO_EXTENSION);
+
+// logo image
+switch(strtolower($ext)) {
+	case 'png':
+		$logoIm = imagecreatefrompng($logo_path);
+		break;
+	case 'jpg':
+		$logoIm = imagecreatefromjpeg($logo_path);
+		break;
+	case 'gif':
+		$logoIm = imagecreatefromgif($logo_path);
+		break;
+}
+
+$logoWidth = imagesx($logoIm);
+$logoHeight = imagesy($logoIm);
+
+// qr image
+$im = imagecreatefrompng($qr_path);
+$width = imagesx($im);
+$height = imagesy($im);
+
+if($logoWidth > $logoHeight) {
+	$ratio = $logoWidth / $logoHeight;
+	$newLogoWidth = $width * 0.2;
+	$newLogoHeight = $height * 0.2 / $ratio;
+}
+else {
+	$ratio = $logoHeight / $logoWidth;
+	$newLogoWidth = $width * 0.2 / $ratio;
+	$newLogoHeight = $height * 0.2;
+}
+
+//        if($logoWidth < $newLogoWidth && $logoHeight < $newLogoHeight) {
+//            $newLogoWidth = $logoWidth;
+//            $newLogoHeight = $logoHeight;
+//        }
+
+$newLogoIm = imagecreatetruecolor($newLogoWidth, $newLogoHeight);
+imagecopy ($newLogoIm, $im, 0, 0, $width/2 - $newLogoWidth/2, $height/2 - $newLogoHeight/2, $newLogoWidth, $newLogoHeight);
+imagecopyresized($newLogoIm, $logoIm, 0, 0, 0, 0, $newLogoWidth, $newLogoHeight, $logoWidth, $logoHeight);
+imagecopymerge($im, $newLogoIm, $width/2 - $newLogoWidth/2, $height/2 - $newLogoHeight/2, 0, 0, $newLogoWidth, $newLogoHeight, 100);
+imagepng($im, $qr_final);
+
+echo "End QR Logo embedding...\n\n<br><br>";
 ?>
