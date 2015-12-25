@@ -91,7 +91,7 @@ echo "Start QR Logo embedding...\n\n<br><br>";
 
 // ======================= Logo embedding ======================= 
 
-$logo_path = getcwd() . DIRECTORY_SEPARATOR . "logo2.jpg";
+$logo_path = getcwd() . DIRECTORY_SEPARATOR . "logo2.png";
 $qr_path = getcwd() . DIRECTORY_SEPARATOR . "myqr.png";
 $qr_final = getcwd() . DIRECTORY_SEPARATOR . "myqr_final.png";
 
